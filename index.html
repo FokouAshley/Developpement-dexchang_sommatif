@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire avec tableau et PDF</title>
+    <style>
+        .p {
+            border: 2px solid powderblue;
+            padding: 10px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+            cursor: pointer;
+        }
+
+        .pagination {
+            margin-bottom: 10px;
+        }
+
+        .pagination button {
+            margin-right: 5px;
+            padding: 5px 10px;
+        }
+
+        #nombre {
+            margin-left: 5px;
+        }
+
+        a {
+            display: inline-block;
+            margin-left: 10px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Formulaire -->
+<form id="userForm" class="p" method="POST">
+
+    <div class="photo-container">
+        <img id="userPhoto" src="images/0.jpg" alt="Photo de profil">
+    </div>
+
+    <label for="prenom">Prénom:</label>
+    <input type="text" id="prenom"><br>
+
+    <label for="nom">Nom:</label>
+    <input type="text" id="nom"><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email"><br>
+
+    <label for="IP">Adresse IP:</label>
+    <input type="text" id="IP"><br><br>
+
+    <button type="submit">Modifier</button>
+    <button type="submit">Ajouter</button>
+    <button type="submit">Supprimer</button>
+</form>
+
+<div class="pagination">
+    <button type="button" id="firstBtn"><<</button>
+    <button type="button" id="prevBtn"><</button>
+    <button type="button" id="nextBtn">></button>
+    <button type="button" id="lastBtn">>></button>
+</div>
+
+<label for="nombre">Nombre total d'usager</label>
+
+<div class="pagination">
+    <label for="nombre">Nombre d'éléments par page:</label>
+    <select id="nombre">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+        <option value="10">10</option>
+    </select>
+    <br>
+    <a href="#" id="pdfLink" target="_blank">Télécharger le PDF</a>
+</div>
+
+
+<div id="tableContainer"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
